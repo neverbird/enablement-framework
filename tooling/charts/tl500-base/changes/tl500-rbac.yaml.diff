@@ -1,0 +1,33 @@
+diff --git a/tooling/charts/tl500-base/templates/tl500-rbac.yaml b/tooling/charts/tl500-base/templates/tl500-rbac.yaml
+index 6c6d6e6..8963817 100644
+--- a/tooling/charts/tl500-base/templates/tl500-rbac.yaml
++++ b/tooling/charts/tl500-base/templates/tl500-rbac.yaml
+@@ -89,21 +89,6 @@ subjects:
+   kind: Group
+   name: {{ .Values.group_name }}
+ ---
+-# to view tl500 gitlab namespaces
+-apiVersion: rbac.authorization.k8s.io/v1
+-kind: RoleBinding
+-metadata:
+-  name: tl500-gitlab-view
+-  namespace: tl500-gitlab
+-roleRef:
+-  apiGroup: rbac.authorization.k8s.io
+-  kind: ClusterRole
+-  name: view
+-subjects:
+-- apiGroup: rbac.authorization.k8s.io
+-  kind: Group
+-  name: {{ .Values.group_name }}
+----
+ # to view tl500 shared namespaces
+ apiVersion: rbac.authorization.k8s.io/v1
+ kind: RoleBinding
+@@ -162,4 +147,4 @@ subjects:
+ roleRef:
+   apiGroup: rbac.authorization.k8s.io
+   kind: ClusterRole
+-  name: 'system:image-puller'
+\ No newline at end of file
++  name: 'system:image-puller'

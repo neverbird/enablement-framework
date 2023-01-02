@@ -89,21 +89,6 @@ subjects:
   kind: Group
   name: {{ .Values.group_name }}
 ---
-# to view tl500 gitlab namespaces
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: tl500-gitlab-view
-  namespace: tl500-gitlab
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: view
-subjects:
-- apiGroup: rbac.authorization.k8s.io
-  kind: Group
-  name: {{ .Values.group_name }}
----
 # to view tl500 shared namespaces
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding

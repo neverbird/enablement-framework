@@ -13,7 +13,7 @@ ipa_namespace: ipa
 namespaces:
   - name: tl500-workspaces
   - name: tl500-tech-exercise
-  - name: tl500-gitlab
+#  - name: tl500-gitlab
   - name: tl500-shared
 
 operators:
@@ -83,31 +83,6 @@ logging:
   #   key: node-role.kubernetes.io/infra
   #   value: ''
   namespace: openshift-logging
-
-gitlab:
-  namespace: tl500-gitlab
-  root_password: 7aydhn160bOrrsGEbnd172rE
-  imagestreams:
-    - name: "gitlab-ce"
-      tag_name: "gitlab-12.8.7"
-      stream_uri: "gitlab/gitlab-ce:12.8.7-ce.0"
-    - name: "gitlab-ce-redis"
-      tag_name: "5.0.4"
-      stream_uri: "redis:5.0.4-alpine"
-    - name: "postgresql"
-      tag_name: "latest"
-      stream_uri: "registry.redhat.io/rhscl/postgresql-96-rhel7"
-# a body of CA certificate that Gitlab should be using goes in here. Body needs to be Base64!
-#  cacert:
-  ldap:
-#    port: "389"
-#    base: "dc=CORP,dc=EXAMPLE,dc=COM"
-#    uri: "MY-LDAP.example.corp.com"
-#    user_filter: ""
-#    validate_certs: "false"
-#    bind_dn: uid=ldap-admin,cn=users,cn=accounts,dc=CORP,dc=EXAMPLE,dc=COM
-#    password: password
-    secret_name: ldap-bind-password
 
 sealed-secrets:
   # Disabled by default
