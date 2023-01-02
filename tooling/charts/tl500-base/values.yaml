@@ -112,7 +112,7 @@ gitops-operator:
   ignoreHelmHooks: false
 
 tl500-teamsters:
-  enabled: true
+  enabled: false
 
 # assumes node-role.kubernetes.io/infra: "" on one or more nodes
 runOnInfra: false
