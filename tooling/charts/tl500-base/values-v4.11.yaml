@@ -1,7 +1,7 @@
 # OpenShift 411 override values
 
 operators:
-  codeready-workspaces: # undefine
+#  codeready-workspaces: # undefine
 
   devspaces:
     enabled: true
