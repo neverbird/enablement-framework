@@ -11,24 +11,10 @@ group_name: student
 ipa_namespace: ipa
 
 namespaces:
-#  - name: tl500-workspaces
   - name: tl500-tech-exercise
-#  - name: tl500-gitlab
   - name: tl500-shared
 
 operators:
-#  codeready-workspaces:
-#    enabled: true
-#    namespace: tl500-workspaces
-#    subscription:
-#      channel: latest
-#      approval: Automatic
-#      operatorName: codeready-workspaces
-#      sourceName: redhat-operators
-#      sourceNamespace: openshift-marketplace
-#    operatorgroup:
-#      create: true
-
   openshift-pipelines-operator-rh:
     enabled: true
     namespace: openshift-operators
@@ -41,30 +27,6 @@ operators:
     operatorgroup:
       create: false
 
-#  elasticsearch-operator:
-#    enabled: true
-#    namespace: openshift-operators
-#    subscription:
-#      channel: stable-5.3
-#      approval: Automatic
-#      operatorName: elasticsearch-operator
-#      sourceName: redhat-operators
-#      sourceNamespace: openshift-marketplace
-#    operatorgroup:
-#      create: false
-
-#  cluster-logging-operator:
-#    enabled: true
-#    namespace: openshift-logging
-#    subscription:
-#      channel: stable-5.3
-#      approval: Automatic
-#      operatorName: cluster-logging
-#      sourceName: redhat-operators
-#      sourceNamespace: openshift-marketplace
-#    operatorgroup:
-#      create: true
-
   cert-utils-operator:
      enabled: true
      namespace: openshift-operators
@@ -76,13 +38,6 @@ operators:
        sourceNamespace: openshift-marketplace
      operatorgroup:
        create: false
-
-#logging:
-  # Might be needed with clusters that have an infra plane
-  # nodeSelector:
-  #   key: node-role.kubernetes.io/infra
-  #   value: ''
-#  namespace: openshift-logging
 
 sealed-secrets:
   # Disabled by default
@@ -111,8 +66,6 @@ gitops-operator:
   namespaces: []
   ignoreHelmHooks: false
 
-#tl500-teamsters:
-#  enabled: false
 
 # assumes node-role.kubernetes.io/infra: "" on one or more nodes
 runOnInfra: false
