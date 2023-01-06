@@ -75,20 +75,9 @@ subjects:
   name: {{ .Values.group_name }}
 ---
 # to view tl500 codeready workspaces namespaces
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: tl500-workspaces-view
-  namespace: tl500-workspaces
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: view
-subjects:
-- apiGroup: rbac.authorization.k8s.io
-  kind: Group
-  name: {{ .Values.group_name }}
----
+# removed
+
+# ---
 # to view tl500 shared namespaces
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
